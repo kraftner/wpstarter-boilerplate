@@ -1,6 +1,6 @@
 # WPStarter boilerplate
 
-Pre-configured package to set up a WordPress website based on and build with [composer](https://getcomposer.org).
+Pre-configured package to set up a WordPress website based on and build with [composer](https://getcomposer.org). [WPStarter](https://wecodemore.github.io/wpstarter) is used to teach Composer WordPress.
 
 ## Usage
 
