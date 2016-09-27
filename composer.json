@@ -1,0 +1,36 @@
+{
+	"name": "dnaber/wpstarter-boilerplate",
+	"type": "project",
+	"description": "Common basic configuration for a WordPress site using Composer and WPStarter",
+	"license": "MIT",
+	"require": {
+		"composer/installers": "^1.2",
+		"wecodemore/wpstarter": "^2.3",
+		"johnpbloch/wordpress": "*",
+		"wpackagist-theme/twentysixteen": "*"
+	},
+	"scripts": {
+		"post-install-cmd": "WCM\\WPStarter\\Setup::run",
+		"post-update-cmd": "WCM\\WPStarter\\Setup::run",
+		"wpstarter": "WCM\\WPStarter\\Setup::run"
+	},
+	"extra": {
+		"wordpress-install-dir": "public/wp",
+		"wordpress-content-dir": "public/wp-content",
+		"installer-paths": {
+			"public/wp-content/plugins/{$name}": [ "type:wordpress-plugin" ],
+			"public/wp-content/themes/{$name}": [ "type:wordpress-theme" ],
+			"public/wp-content/mu-plugins/{$name}": [ "type:wordpress-muplugin" ]
+		},
+		"wpstarter": {
+			"register-theme-folder": false,
+			"prevent-overwrite": [ ".gitignore" ]
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	]
+}
