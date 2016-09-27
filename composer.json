@@ -24,7 +24,8 @@
 		},
 		"wpstarter": {
 			"register-theme-folder": false,
-			"prevent-overwrite": [ ".gitignore" ]
+			"prevent-overwrite": [ ".gitignore" ],
+			"env-example": "templates/.env.example"
 		}
 	},
 	"repositories": [
