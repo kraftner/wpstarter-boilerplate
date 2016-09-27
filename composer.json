@@ -10,8 +10,8 @@
 		"wpackagist-theme/twentysixteen": "*"
 	},
 	"scripts": {
-		"post-install-cmd": "WCM\\WPStarter\\Setup::run",
-		"post-update-cmd": "WCM\\WPStarter\\Setup::run",
+		"post-install-cmd": "@wpstarter",
+		"post-update-cmd": "@wpstarter",
 		"wpstarter": "WCM\\WPStarter\\Setup::run"
 	},
 	"extra": {
