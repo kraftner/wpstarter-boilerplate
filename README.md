@@ -7,8 +7,9 @@ Pre-configured package to set up a WordPress website based on and build with [co
 Fetching the boilerplate via composer to a new directory (`my-website`):
 
 ```
-$ composer create-project dnaber/wpstarter-boilerplate my-website
+$ composer create-project dnaber/wpstarter-boilerplate:dev-master my-website
 ```
+You will get asked if you want to remove the existing git history. Answer with _yes_ (Y) as you're about to start a new project.
 
 That will give you the following directory structure:
 
