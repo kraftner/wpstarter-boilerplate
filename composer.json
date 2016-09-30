@@ -7,7 +7,8 @@
 		"composer/installers": "^1.2",
 		"wecodemore/wpstarter": "^2.3",
 		"johnpbloch/wordpress": "*",
-		"wpackagist-theme/twentysixteen": "*"
+		"wpackagist-theme/twentysixteen": "*",
+        "koodimonni-language/de_DE": "*"
 	},
 	"scripts": {
 		"post-install-cmd": "@wpstarter",
@@ -22,16 +23,31 @@
 			"public/wp-content/themes/{$name}": [ "type:wordpress-theme" ],
 			"public/wp-content/mu-plugins/{$name}": [ "type:wordpress-muplugin" ]
 		},
-		"wpstarter": {
-			"register-theme-folder": false,
-			"prevent-overwrite": [ ".gitignore" ],
-			"env-example": "templates/.env.example"
-		}
+        "dropin-paths": {
+            "public/wp-content/languages/": [
+                "vendor:koodimonni-language"
+            ],
+            "public/wp-content/languages/plugins/": [
+                "vendor:koodimonni-plugin-language"
+            ],
+            "public/wp-content/languages/themes/": [
+                "vendor:koodimonni-theme-language"
+            ]
+        },
+        "wpstarter": {
+            "register-theme-folder": false,
+            "prevent-overwrite": [ ".gitignore" ],
+            "env-example": "templates/.env.example"
+        }
 	},
 	"repositories": [
 		{
 			"type": "composer",
 			"url": "https://wpackagist.org"
+		},
+        {
+			"type": "composer",
+			"url": "https://wp-languages.github.io"
 		}
 	]
 }
