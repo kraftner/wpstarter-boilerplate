@@ -7,8 +7,7 @@
         "composer/installers": "^1.2",
         "wecodemore/wpstarter": "^2.3",
         "johnpbloch/wordpress": "*",
-        "wpackagist-theme/twentysixteen": "*",
-        "koodimonni-language/de_DE": "*"
+        "wpackagist-theme/twentysixteen": "*"
     },
     "scripts": {
         "post-install-cmd": "@wpstarter",
@@ -52,10 +51,6 @@
         {
             "type": "composer",
             "url": "https://wpackagist.org"
-        },
-        {
-            "type": "composer",
-            "url": "https://wp-languages.github.io"
         }
     ]
 }
