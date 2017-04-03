@@ -5,9 +5,9 @@
     "license": "MIT",
     "require": {
         "composer/installers": "^1.2",
-        "wecodemore/wpstarter": "^2.3",
-        "johnpbloch/wordpress": "*",
-        "wpackagist-theme/twentysixteen": "*"
+        "wecodemore/wpstarter": "^2.4",
+        "johnpbloch/wordpress-core": "~4.7.0",
+        "wpackagist-theme/twentyseventeen": "^1.0"
     },
     "scripts": {
         "post-install-cmd": "@wpstarter",
