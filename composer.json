@@ -28,17 +28,6 @@
                 "type:wordpress-muplugin"
             ]
         },
-        "dropin-paths": {
-            "public/wp-content/languages/": [
-                "vendor:koodimonni-language"
-            ],
-            "public/wp-content/languages/plugins/": [
-                "vendor:koodimonni-plugin-language"
-            ],
-            "public/wp-content/languages/themes/": [
-                "vendor:koodimonni-theme-language"
-            ]
-        },
         "wpstarter": {
             "register-theme-folder": false,
             "prevent-overwrite": [
