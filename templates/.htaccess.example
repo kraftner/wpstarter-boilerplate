@@ -1,3 +1,7 @@
+##
+# Example rewrite configuration to allow sub domain and
+# sub directory site URLs in one installation (you should set up sub-domain installation)
+#
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
