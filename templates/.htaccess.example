@@ -5,15 +5,30 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
+	# Redirect direct requests to index.php to /
 	RewriteRule ^index\.php$ - [L]
 
 	# add a trailing slash to /wp-admin
 	RewriteRule ^(?:([_0-9a-zA-Z-]+)/)?wp-admin$ $1/wp-admin/ [R=301,L]
 
+	# Avoid internal redirect loops
+	RewriteCond %{ENV:REDIRECT_STATUS} 200 [OR]
 	RewriteCond %{REQUEST_FILENAME} -f [OR]
 	RewriteCond %{REQUEST_FILENAME} -d
 	RewriteRule ^ - [L]
+
+	# Rewrite requests to wp-admin wp-includes directories to wp/ sub-directory
+	# The regex optionally coveres multisite sub-directory site URLs (single segment)
+	# /some-site/wp-admin/ → /wp/wp-admin/
+	# /wp-admin/ → /wp/wp-admin/
 	RewriteRule ^(?:(?:[_0-9a-zA-Z-]+)/)?(wp-(admin|includes).*) wp/$1 [L]
+	# Same for PHP files (like xmlrpc.php)
 	RewriteRule ^(?:(?:[_0-9a-zA-Z-]+)/)?(.*\.php)$ wp/$1 [L]
+
+	# Rewrite requests to wp-content of sub-directory site URLs
+	# /some-site/wp-content/ → /wp-content/
+	RewriteRule ^[_0-9a-zA-Z-]+/wp-content/(.*) wp-content/$1 [L]
+
+	# Rewrite everything else to index.php
 	RewriteRule . index.php [L]
 </IfModule>
