@@ -17,6 +17,11 @@
             "rm -rf public/wp/wp-content"
         ]
     },
+    "config": {
+        "php": "7.1.14",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
     "extra": {
         "wordpress-install-dir": "public/wp",
         "wordpress-content-dir": "public/wp-content",
