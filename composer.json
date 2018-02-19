@@ -4,10 +4,10 @@
     "description": "Common basic configuration for a WordPress site using Composer and WPStarter",
     "license": "MIT",
     "require": {
-        "composer/installers": "^1.2",
-        "wecodemore/wpstarter": "^2.4",
-        "johnpbloch/wordpress-core": "~4.7.0",
-        "wpackagist-theme/twentyseventeen": "^1.0"
+        "composer/installers": "@stable",
+        "wecodemore/wpstarter": "@stable",
+        "johnpbloch/wordpress-core": "@stable",
+        "wpackagist-theme/twentyseventeen": "@stable"
     },
     "scripts": {
         "post-install-cmd": "@wpstarter",
