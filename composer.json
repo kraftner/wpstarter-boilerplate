@@ -12,7 +12,10 @@
     "scripts": {
         "post-install-cmd": "@wpstarter",
         "post-update-cmd": "@wpstarter",
-        "wpstarter": "WCM\\WPStarter\\Setup::run"
+        "wpstarter": [
+            "WCM\\WPStarter\\Setup::run",
+            "rm -rf public/wp/wp-content"
+        ]
     },
     "extra": {
         "wordpress-install-dir": "public/wp",
