@@ -15,7 +15,7 @@
         "wpstarter": [
             "WCM\\WPStarter\\Setup::run",
             "rm -rf public/wp/wp-content",
-            "test ! -d public/wp-content/plugins && mkdir -p public/wp-content/plugins"
+            "if [ ! -d public/wp-content/plugins ]; then mkdir -p public/wp-content/plugins; fi"
         ]
     },
     "config": {
