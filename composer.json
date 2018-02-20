@@ -14,7 +14,8 @@
         "post-update-cmd": "@wpstarter",
         "wpstarter": [
             "WCM\\WPStarter\\Setup::run",
-            "rm -rf public/wp/wp-content"
+            "rm -rf public/wp/wp-content",
+            "test ! -d public/wp-content/plugins && mkdir -p public/wp-content/plugins"
         ]
     },
     "config": {
