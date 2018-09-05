@@ -5,27 +5,16 @@
     "license": "MIT",
     "require": {
         "composer/installers": "@stable",
-        "wecodemore/wpstarter": "@stable",
         "johnpbloch/wordpress-core": "@stable",
+        "wecodemore/wpstarter": "@stable",
         "wpackagist-theme/twentyseventeen": "@stable"
     },
-    "scripts": {
-        "post-install-cmd": "@wpstarter",
-        "post-update-cmd": "@wpstarter",
-        "wpstarter": [
-            "WCM\\WPStarter\\Setup::run",
-            "rm -rf public/wp/wp-content",
-            "if [ ! -d public/wp-content/plugins ]; then mkdir -p public/wp-content/plugins; fi"
-        ]
-    },
     "config": {
+        "optimize-autoloader": true,
         "php": "7.1.14",
-        "sort-packages": true,
-        "optimize-autoloader": true
+        "sort-packages": true
     },
     "extra": {
-        "wordpress-install-dir": "public/wp",
-        "wordpress-content-dir": "public/wp-content",
         "installer-paths": {
             "public/wp-content/plugins/{$name}": [
                 "type:wordpress-plugin"
@@ -37,6 +26,8 @@
                 "type:wordpress-muplugin"
             ]
         },
+        "wordpress-content-dir": "public/wp-content",
+        "wordpress-install-dir": "public/wp",
         "wpstarter": {
             "register-theme-folder": false,
             "prevent-overwrite": [
@@ -50,5 +41,14 @@
             "type": "composer",
             "url": "https://wpackagist.org"
         }
-    ]
+    ],
+    "scripts": {
+        "post-install-cmd": "@wpstarter",
+        "post-update-cmd": "@wpstarter",
+        "wpstarter": [
+            "WCM\\WPStarter\\Setup::run",
+            "rm -rf public/wp/wp-content",
+            "if [ ! -d public/wp-content/plugins ]; then mkdir -p public/wp-content/plugins; fi"
+        ]
+    }
 }
