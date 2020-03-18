@@ -1,5 +1,5 @@
 {
-    "name": "dnaber/wpstarter-boilerplate",
+    "name": "inpsyde/wpstarter-boilerplate",
     "type": "project",
     "description": "Common basic configuration for a WordPress site using Composer and WPStarter",
     "license": "MIT",
