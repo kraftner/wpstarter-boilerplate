@@ -3,11 +3,11 @@
     "type": "project",
     "description": "Common basic configuration for a WordPress site using Composer and WPStarter",
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "composer/installers": "@stable",
-        "johnpbloch/wordpress-core": "@stable",
-        "wecodemore/wpstarter": "@stable",
-        "wpackagist-theme/twentyseventeen": "@stable"
+        "roots/wordpress": "^5.5",
+        "wecodemore/wpstarter": "^3"
     },
     "config": {
         "optimize-autoloader": true,
