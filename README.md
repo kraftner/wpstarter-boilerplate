@@ -1,13 +1,13 @@
 # WPStarter boilerplate
 
-Pre-configured package to set up a WordPress website based on and build with [composer](https://getcomposer.org). [WPStarter](https://wecodemore.github.io/wpstarter) is used to teach Composer WordPress.
+Bootstraping a new website application with WordPress based on [WPStarter](https://github.com/wecodemore/wpstarter).
 
 ## Usage
 
 Fetching the boilerplate via composer to a new directory (`my-website`):
 
 ```
-$ composer create-project dnaber/wpstarter-boilerplate:dev-master my-website
+$ composer create-project inpsyde/wpstarter-boilerplate:dev-master my-website
 ```
 You will get asked if you want to remove the existing git history. Answer with _yes_ (Y) as you're about to start a new project.
 
@@ -37,6 +37,5 @@ Configure your web server to use the directory `public/` as document root (web r
 **Steps to take**
 
 * If using Apache web server, copy `templates/.htaccess.example` to `public/.htaccess`.
-* Copy `.env.example` to `.env` and set the required database credentials and `WP_HOME` in the `.env` file.
+* Copy `templates/.env.example` to `.env` and set the required database credentials and `WP_HOME` in the `.env` file.
 
- 
