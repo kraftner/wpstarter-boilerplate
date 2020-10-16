@@ -1,13 +1,13 @@
 # WPStarter boilerplate
 
-Bootstraping a new website application with WordPress based on [WPStarter](https://github.com/wecodemore/wpstarter).
+Bootstraping a new website application with WordPress based on [WPStarter](https://github.com/wecodemore/wpstarter). This version is for WPSterter version `2.*`. Use the master branch for latest WPStarter support.
 
 ## Usage
 
 Fetching the boilerplate via composer to a new directory (`my-website`):
 
 ```
-$ composer create-project inpsyde/wpstarter-boilerplate:dev-master my-website
+$ composer create-project inpsyde/wpstarter-boilerplate:dev-version-2 my-website
 ```
 You will get asked if you want to remove the existing git history. Answer with _yes_ (Y) as you're about to start a new project.
 
