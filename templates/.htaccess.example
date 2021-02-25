@@ -12,7 +12,6 @@
 	RewriteRule ^(?:([_0-9a-zA-Z-]+)/)?wp-admin$ $1/wp-admin/ [R=301,L]
 
 	# Avoid internal redirect loops
-	RewriteCond %{ENV:REDIRECT_STATUS} 200 [OR]
 	RewriteCond %{REQUEST_FILENAME} -f [OR]
 	RewriteCond %{REQUEST_FILENAME} -d
 	RewriteRule ^ - [L]
@@ -21,12 +20,18 @@
 	# The regex optionally coveres multisite sub-directory site URLs (single segment)
 	# /some-site/wp-admin/ → /wp/wp-admin/
 	# /wp-admin/ → /wp/wp-admin/
+	# Avoid internal redirect loops
+	RewriteCond %{REQUEST_URI} !^/wp/
 	RewriteRule ^(?:(?:[_0-9a-zA-Z-]+)/)?(wp-(admin|includes).*) wp/$1 [L]
 	# Same for PHP files (like xmlrpc.php)
+	# Avoid internal redirect loops
+	RewriteCond %{REQUEST_URI} !^/wp/
 	RewriteRule ^(?:(?:[_0-9a-zA-Z-]+)/)?(.*\.php)$ wp/$1 [L]
 
 	# Rewrite requests to wp-content of sub-directory site URLs
 	# /some-site/wp-content/ → /wp-content/
+	# Avoid internal redirect loops
+	RewriteCond %{REQUEST_URI} !^/wp-content/
 	RewriteRule ^[_0-9a-zA-Z-]+/wp-content/(.*) wp-content/$1 [L]
 
 	# Rewrite everything else to index.php
